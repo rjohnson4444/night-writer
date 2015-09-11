@@ -101,20 +101,21 @@ if i_run_my_code_for_real
   # Get first file name from command line arguments
   message_file = ARGV[0]
 
-  # Read from the message.txt file
+  ## Read from the message.txt file
   message = File.read(message_file)
 
 
-  # Create a new braille_output_file and write newly converted Braille
+  ## Create a new braille_output_file and write newly converted Braille
   braille_output_file = ARGV[1]
   braille_output = File.open(braille_output_file, "w")
 
-  # Print out message that states what file has been created and how many characters are in it.
+  ## Print out message that states what file has been created and how many characters are in it.
   message_counter = message.gsub(" ","").chars.count - 1
   puts "Created '#{braille_output_file}' containing #{message_counter} characters."
 
-  # Convert the normal text to Braille
+  ## Convert the normal text to Braille
   braille = NightWrite.new(message).to_braille
+
 
   # Write newly converted Braille to output file.
   braille_output.write(braille)

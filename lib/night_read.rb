@@ -1,7 +1,7 @@
 class NightRead
 
   def self.convert_to_text(message)
-
+    message.chars
   end
 end
 

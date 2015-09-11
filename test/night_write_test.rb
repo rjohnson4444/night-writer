@@ -22,10 +22,6 @@ class NightWriteTest < Minitest::Test
     assert_equal "Created 'braille.txt' containing 10 characters.", command_line_message
   end
 
-  def test_it_reads_text_from_input_file
-    skip
-  end
-
   def test_it_convert_lower_case_text_to_braille_letters
     assert_equal  "0.\n..\n..", NightWrite.new("a").to_braille
 
@@ -34,11 +30,6 @@ class NightWriteTest < Minitest::Test
 
   def test_it_converts_capital_text_letters_to_capital_braille_letters
     assert_equal  "..0.\n....\n.0..", NightWrite.new("A").to_braille
-  end
-
-  def test_it_writes_to_a_new_line_after_80_braille_characters
-    skip
-    assert_equal
   end
 
   def test_it_writes_the_braille_into_the_output_file
@@ -55,12 +46,8 @@ class NightWriteTest < Minitest::Test
     assert_equal braille, output_text
   end
 
-  def text_it_reads_a_text_character_from_a_file
-    skip
-  end
-
   def test_it_converts_a_lowercase_braille_character_to_a_text_character
-    braille = ".0\n..\n.."
+    braille = ".0...."
     converted = NightRead.convert_to_text(braille)
     assert_equal 'a', converted
   end
